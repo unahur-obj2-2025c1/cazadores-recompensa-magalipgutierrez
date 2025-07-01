@@ -1,19 +1,19 @@
 package culinario;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test1;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import ar.edu.unahur.obj2.*;
+import ar.edu.unahur.obj2.CazadorRural;
+import ar.edu.unahur.obj2.CazadorSigiloso;
+import ar.edu.unahur.obj2.CazadorStrategy;
+import ar.edu.unahur.obj2.CazadorUrbano;
+import ar.edu.unahur.obj2.IProfugo;
+import ar.edu.unahur.obj2.Profugo;
+import ar.edu.unahur.obj2.Zona;
 
-
-class Test1 {
-
-	
+class Test24 {
 	private IProfugo profugo1= new Profugo(10, 5, false); 
 	private IProfugo profugo2= new Profugo(3, 1, true); 
 	private IProfugo profugo3= new Profugo(3, 6, true); 
@@ -35,8 +35,21 @@ class Test1 {
 	
 	@Test
 	void cazadorurbano_cazando() {
+		profugos.add(profugo1);
+		profugos.add(profugo2);
+		profugos.add(profugo3);
+		profugos.add(profugo4);
+		profugos.add(profugo5);
 		
-	}
+		cazador1.cazar(profugo1);
+		cazador1.cazar(profugo2);
+		cazador1.cazar(profugo3);
+		cazador1.cazar(profugo4);
+		cazador1.cazar(profugo5);
+		
+		cazador1.sumarExperiencia();
+		
+		assertEquals(2, urbana.getProfugos().size());
 	
-
+	}
 }

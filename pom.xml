@@ -20,21 +20,16 @@
             <version>5.12.0</version>
             <scope>test</scope>
         </dependency>
-         <dependency>
-    		<groupId>junit</groupId>
-    		<artifactId>junit</artifactId>
-    		<version>4.13.2</version>
-   			<scope>test</scope>
-</dependency>
+      
         
         
     </dependencies>
 
     <build>
-    <plugins>
+    	<plugins>
 
         <!-- Plugin de Maven Surefire para ejecutar pruebas -->
-        <plugin>
+         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.1.2</version>
@@ -43,7 +38,7 @@
                 <forkCount>1</forkCount>
                 <reuseForks>true</reuseForks>
             </configuration>
-        </plugin>
+         </plugin>
 
 
         <!-- Plugin de JaCoCo -->
